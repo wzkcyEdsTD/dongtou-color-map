@@ -1,0 +1,240 @@
+.box() {
+    box-sizing: border-box;
+}
+
+.flex() {
+    display       : flex;
+    flex-direction: column;
+}
+
+.bg(@url) {
+    background-image: @url;
+    background-size : 100% 100%;
+}
+
+.page_panel {
+    width           : 420px;
+    position        : fixed;
+    z-index         : 1;
+    top             : 0px;
+    left            : 0px;
+    bottom          : 0px;
+    background-color: rgba(0, 0, 0, 0.4);
+    .box();
+    .flex();
+    padding: 50px 10px 20px 10px;
+
+    >div {
+        .box();
+        margin: 5px 0;
+
+        >div,
+        >header {
+            margin-bottom: 14px;
+        }
+
+        >header {
+            text-align: center;
+
+            >span {
+                display         : inline-block;
+                height          : 36px;
+                line-height     : 36px;
+                padding         : 0 30px;
+                width           : unset;
+                border-radius   : 0 0 10px 10px;
+                border          : 1px rgb(66, 94, 173) solid;
+                background-color: rgb(20, 26, 84);
+                font-weight     : bold;
+                color           : white;
+            }
+        }
+    }
+
+    //  三色统计图
+    .color_statistic {
+        .bg(url("../../assets/image/lt.png"));
+        .box();
+        padding: 2px 10px;
+
+        .color_div {
+            display        : flex;
+            justify-content: space-around;
+
+            >span {
+                display         : inline-block;
+                height          : 90px;
+                width           : 100%;
+                margin          : 0 10px;
+                background-color: rgb(16, 35, 93);
+                border-top      : 1px rgb(66, 94, 173) solid;
+                border-bottom   : 1px rgb(66, 94, 173) solid;
+
+                >i {
+                    display   : block;
+                    font-style: normal;
+                }
+
+                >i:first-child {
+                    font-size  : 30px;
+                    font-weight: bold;
+                    height     : 50px;
+                    line-height: 50px;
+                }
+
+                >i:last-child {
+                    font-size  : 17px;
+                    font-weight: bold;
+                    color      : rgb(93, 160, 248);
+                    height     : 40px;
+                    line-height: 40px;
+                }
+            }
+        }
+
+        .color_chart {
+            min-height: 200px;
+            display   : flex;
+        }
+    }
+
+    //  预警列表
+    .color_list {
+        padding: 2px;
+        .bg(url("../../assets/image/lb.png"));
+        flex: 1;
+        .flex();
+        overflow: hidden;
+
+        >ul::-webkit-scrollbar {
+            width      : 4px !important;
+            height     : 4px !important;
+            border-left: 0;
+            background : rgb(7, 0, 109);
+        }
+
+        >ul::-webkit-scrollbar-thumb {
+            background   : rgba(195, 188, 255, 0.973);
+            border-radius: 0;
+        }
+
+        >ul {
+            flex: 1;
+            .box();
+            padding   : 0 10px;
+            overflow-x: hidden;
+            overflow-y: auto;
+
+            >li {
+                height     : 44px;
+                line-height: 44px;
+                font-size  : 18px;
+                overflow   : hidden;
+                .box();
+                padding      : 0 30px;
+                border-bottom: 1px rgba(158, 158, 158, 0.281) solid;
+
+                >span {
+                    display: inline-block;
+                    width  : unset;
+                }
+
+                >span:first-child {
+                    float: left;
+                }
+
+                >span:last-child {
+                    float: right;
+                }
+            }
+        }
+    }
+
+    //  图例
+    .color_legend {
+        .bg(url("../../assets/image/legend.png"));
+        .box();
+        padding  : 10px 20px;
+        position : fixed;
+        bottom   : 30px;
+        right    : 40px;
+        font-size: 18px;
+
+        >span {
+            display      : block;
+            text-align   : left;
+            margin-bottom: 6px;
+        }
+
+        >ul {
+            list-style: none;
+
+            >li {
+                height     : 30px;
+                line-height: 30px;
+
+                >* {
+                    vertical-align: middle;
+                }
+
+                >i {
+                    display      : inline-block;
+                    width        : 16px;
+                    height       : 16px;
+                    border-radius: 10px;
+                }
+            }
+        }
+    }
+
+    //  底图切换
+    .color_switch {
+        position : fixed;
+        top      : 40px;
+        right    : 40px;
+        font-size: 18px;
+
+        >span {
+            display         : inline-block;
+            background-color: rgb(16, 35, 93);
+            border          : 1px rgb(66, 94, 173) solid;
+            height          : 40px;
+            line-height     : 40px;
+            padding         : 0 10px;
+            border-radius   : 10px;
+            margin-left     : 10px;
+            color           : rgb(165, 165, 165);
+            cursor          : pointer;
+        }
+
+        .switch_active {
+            color : #fff;
+            border: 2px rgb(83, 107, 172) solid;
+        }
+    }
+
+    //  common
+    .warn_0 {
+        color: rgb(0, 255, 0);
+    }
+
+    .warn_0_bg {
+        background-color: rgb(0, 255, 0);
+    }
+
+    .warn_1 {
+        color: yellow;
+    }
+
+    .warn_1_bg {
+        background-color: yellow;
+    }
+
+    .warn_2 {
+        color: red;
+    }
+
+    .warn_2_bg {
+        background-color: red;
+    }
+}

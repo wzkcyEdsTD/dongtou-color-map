@@ -1,18 +1,33 @@
+<!--
+ * @Author: eds
+ * @Date: 2020-06-22 09:18:44
+ * @LastEditTime: 2020-06-22 10:44:48
+ * @LastEditors: eds
+ * @Description: 
+ * @FilePath: \dongtou-color-map\src\views\Home.vue
+--> 
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Map />
+    <Panel />
   </div>
 </template>
 
-<script>
+<script lang="ts">
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import Map from "@/components/Map/Map.vue";
+import Panel from "@/components/Map/Panel.vue";
+import { Component, Vue } from "vue-property-decorator";
 
-export default {
-  name: 'Home',
-  components: {
-    HelloWorld
-  }
-}
+@Component({
+  components: { Map, Panel }
+})
+export default class Home extends Vue {}
 </script>
+
+<style lang="less" scoped>
+.home {
+  height: 100%;
+  overflow: hidden;
+}
+</style>
