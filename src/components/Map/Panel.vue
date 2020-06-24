@@ -1,7 +1,7 @@
 <!--
  * @Author: eds
  * @Date: 2020-06-22 10:42:43
- * @LastEditTime: 2020-06-22 16:44:44
+ * @LastEditTime: 2020-06-24 09:58:42
  * @LastEditors: eds
  * @Description: 
  * @FilePath: \dongtou-color-map\src\components\Map\Panel.vue
@@ -67,7 +67,7 @@ import { Component, Vue } from "vue-property-decorator";
 })
 export default class Panel extends Vue {
   private _option_: JSX.ChartOption = option;
-  private layers: string[] = ["大数据风格", "标准风格", "影像图"];
+  private layers: string[] = ["影像图", "标准风格", "大数据风格"];
   private force = 0;
   private statistic: object[] = [
     { t: "绿色预警", percent: 40, v: 0 },

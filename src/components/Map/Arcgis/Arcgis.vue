@@ -1,13 +1,12 @@
 <!--
  * @Author: eds
  * @Date: 2020-06-22 09:56:16
- * @LastEditTime: 2020-06-22 16:55:58
+ * @LastEditTime: 2020-06-23 09:11:46
  * @LastEditors: eds
  * @Description: 
  * @FilePath: \dongtou-color-map\src\components\Map\Arcgis\Arcgis.vue
 --> 
 <template>
-  <!-- <div class="revitalize_line" :id="MapId" /> -->
   <div class="arcgis_map" :id="MapId" />
 </template>
 

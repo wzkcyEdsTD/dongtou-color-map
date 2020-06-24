@@ -1,7 +1,7 @@
 <!--
  * @Author: eds
  * @Date: 2020-06-22 09:50:52
- * @LastEditTime: 2020-06-22 16:33:24
+ * @LastEditTime: 2020-06-24 09:57:43
  * @LastEditors: eds
  * @Description: 
  * @FilePath: \dongtou-color-map\src\components\Core\ArcgisCore.vue
@@ -31,14 +31,14 @@ export default class ArcgisCore extends Vue {
       VectorTileLayer
     } = (this as any).$ARCGIS_API;
     return new Promise(resolve => {
-      this.map = Map({
+      this.map = new Map({
         layers: [
           new TileLayer({
             id: "TDTIMAGE2019",
             url: TDTIMAGE2019,
             visible: true
           }),
-          new TileLayer({ id: "YX", url: YX, visible: false }),
+          // new TileLayer({ id: "YX", url: YX, visible: false }),
           new VectorTileLayer({
             id: "STANDARD",
             url: STANDARD,

@@ -1,7 +1,7 @@
 /*
  * @Author: eds
  * @Date: 2020-06-22 09:56:16
- * @LastEditTime: 2020-06-22 16:55:46
+ * @LastEditTime: 2020-06-24 10:02:08
  * @LastEditors: eds
  * @Description:
  * @FilePath: \dongtou-color-map\src\components\Map\Arcgis\Arcgis.ts
@@ -23,7 +23,7 @@ function doMassMap(context: JSX.ElementClass): Promise<boolean> {
   return new Promise(resolve => {
     const { view } = context as any;
     view.on("click", (evt: any) => {
-      evt;
+      console.log(evt);
     });
     resolve(true);
   });
@@ -40,7 +40,10 @@ function doSwitchMap(
   force: number
 ): Promise<boolean> {
   return new Promise(resolve => {
-    console.log(force);
+    const { map } = context as any;
+    ["TDTIMAGE2019", "STANDARD", "LAYER"].map((v, index) => {
+      map.findLayerById(v).visible = index == force;
+    });
     resolve(true);
   });
 }
